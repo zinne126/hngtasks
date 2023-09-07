@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend Task</title>
+</head>
+<style>
+    body{
+        font-family: arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    header{
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+    .container{
+        max-width: 600px;
+        margin: 10px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .data{
+        margin-bottom: 10px;
+    }
+    img{
+        max-width: 200px;
+        border-radius: 50px;
+    }
+    footer{
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+</style>
+<body>
+    <header>
+        personal Data showcase
+    </header>
+    <div class="container">
+        <div class="data" data-testid="slackUserName">
+        <label>slack Name:</label>
+        <span>zinne126</span>
+        </div>
+        <div class="data" data-testid="slackDisplayPicture">
+            <label>slack Display Picture:</label>
+            <img src="img/WhatsApp Image 2023-09-08 at 12.07.03 AM.jpeg" alt="zinne126">
+        </div>
+        <div class="data" data-testid="currentDayOfTheWeek">
+            <label>thursday:</label>
+            <span id="currentDay"></span>
+        </div>
+        <div class="data" data-testid="currentUTCTime">
+            <label>current UTC Time:</label>
+            <span id="currentUTC"></span>
+        </div>
+        <div class="data" data-testid="myTrack">
+            <label>Track:</label>
+            <span>frontend</span>
+        </div>
+    </div>
+    <footer>
+        <div class="github-link" data-testid="githubURL">
+        <a href="https://github.com/zinne126">github Respository</a>
+        </div>
+    </footer>
+</body>
+
+<script>
+    function updateDateTime() {
+        const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        const now = new Date();
+        const currentDay = daysOfWeek[now.getUTCDay()];
+        const currentUTCTime = now.toISOString().substr(11, 8);
+
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = currentDay;
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = currentUTCTime;
+
+        setTimeout(updateDateTime, 1000);
+
+    }
+
+    updateDateTime();
+</script>
+</html>
