@@ -1,26 +1,24 @@
+// Getting the current date of the week
 
-const currentDay = document.getElementById('day');
+const currentDate = new Date();
 
-const timeInMilli = document.getElementById('time');
+const dayOfWeek = currentDate.getDay();
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"];
+const currentDay = daysOfWeek[dayOfWeek];
 
-// Function to display current Day of the week
-const displayCurrentDayOfWeek = () =>{
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-    const currentDate = new Date();
-    const dayOfWeek = daysOfWeek[currentDate.getUTCDay()];
-    currentDay.textContent = `${dayOfWeek}`;
-}
+// Targeting the vacant space for the current day of the week
 
-// Function to display Current time in Milliseconds
-const displayTimeinMilli = () => {
-    const currentDate = new Date();
-    const currentDateInMilli = currentDate.getTime();
+const theDay = document.getElementById("currentDay");
+theDay.innerHTML = currentDay;
 
-    // Format the millisecond count with commas as thousands separators
-    const formattedTimeInMilli = currentDateInMilli.toLocaleString();
+// Getting the current UTC time 
 
-    timeInMilli.textContent = formattedTimeInMilli;
-}
+const currentUTC = new Date();
+const hours = currentUTC.getUTCHours();
+const minutes = currentUTC.getUTCMinutes();
+const seconds = currentUTC.getUTCSeconds();
 
-setInterval(displayTimeinMilli, 1000);
-displayCurrentDayOfWeek();
+// Targeting the vacant space for the current UTC time
+
+const theCurrentUTC = document.getElementById("currentUTC");
+theCurrentUTC.innerHTML = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;

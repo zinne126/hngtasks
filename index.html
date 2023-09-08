@@ -4,45 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HNG HNG-TASK-1</title>
+  <title>HNG - Stage 1 Task</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <main>
-    <div class="slack__display--flex">
-      <!-- Slack Display Picture -->
-      <div class="slack__display--profile">
-        <img class="slack__display--img" src="./img/WhatsApp Image 2023-09-08 at 12.07.03 AM.jpeg" alt="zinne126" data-testid="slackDisplayImage">
-      </div>
-      <!-- Slack Name -->
-      <h1 data-testid="slackUserName">zinne126</h1>
-    </div>
 
+  <section>
+    <h1 data-testid="slackUserName">zinne126</h1>
+    <img src="./img/WhatsApp Image 2023-09-08 at 12.07.03 AM.jpeg" alt="zinne126" data-testid="slackDisplayImage" />
+  </section>
 
-    <div class="slack__details--day">
-      <!-- Current Day of the Week -->
-      <p data-testid="currentDayOfTheWeek" id="day"></p>
-    </div>
+  <div class="time">
+    <h4 data-testid="currentDayOfTheWeek">Current Day Of The Week: <span id="currentDay"></span></h4>
+    <h4 data-testid="currentUTCTime" class="utc">Current UTC: <span id="currentUTC"></span></h4>
+    <h4 data-testid="myTrack">Frontend Track</h4>
+  </div>
 
-    <div class="slack__details--time">
-      <!-- Current UTC Time -->
-      <p data-testid="currentUTCTime" id="time"></p>
-    </div>
-
-    <div class="slack__details--track">
-      <!-- Track -->
-      <p data-testid="myTrack">Frontend Stage 1</p>
-    </div>
-
-    <div class="slack__details--url">
-      <!-- GitHub URL -->
-      <a href="https://github.com/zinne126/zinne126.github.io" target="_blank" data-testid="githubURL">View Code</a>
-    </div>
-
-
-  </main>
-  <script src="./script.js"></script>
+  <div>
+    <p>Click <a href="https://github.com/zinne126/zinne126.github.io" data-testid="githubURL">here</a> to visit my github URL
+    </p>
+  </div>
+  <script type="module" src="./script.js"></script>
 </body>
 
 </html>
