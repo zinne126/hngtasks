@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    /* padding: 3rem 0; */
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    /* border: 1px solid red; */
+    /* width: 60%;
+    margin: auto; */
+    height: 100vh;
+    margin-top: 3rem;
+    /* box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.slack__display--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slack__display--profile {
+    border-radius: 70px;
+}
+
+.slack__display--profile>img {
+    border-radius: 70px;
+    width: 25rem;
+    height: 25rem;
+}
+
+.slack__details--day,
+.slack__details--time,
+.slack__details--track,
+.slack__details--url {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 550;
+}
+
+.slack__details--url>a {
+    text-decoration: none;
+    color: white;
+    background-color: #121212;
+    padding: 1rem;
+    border-radius: 1rem;
+}
