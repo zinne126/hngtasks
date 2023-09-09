@@ -1,18 +1,13 @@
-function UpdateTime() {
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const current = new Date();
-    const day = days[current.getUTCDay()];
-    const time = current.getTime();
+let today = new Date();
+let dayName = document.querySelector("[data-testid=currentDayOfTheWeek]");
+let timeUtc = document.querySelector("[data-testid=currentUTCTime]");
 
-    const dayofweek = document.getElementById('currentday');
-    const timenow = document.getElementById('currenttime');
+let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    if (dayofweek && timenow) {
-        dayofweek.textContent = day;
-        timenow.textContent = time.toString();
-    }    
-}
-document.addEventListener('DOMContentLoaded', function (){
-    UpdateTime();
-    setInterval(UpdateTime, 1);
+days.forEach((day, index) => {
+    if (index == today.getDay()) {
+        dayName.textContent = day;
+    }
 });
+
+timeUtc.textContent += today.getTime();
