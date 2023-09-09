@@ -1,24 +1,18 @@
-// Getting the current date of the week
+function UpdateTime() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const current = new Date();
+    const day = days[current.getUTCDay()];
+    const time = current.getTime();
 
-const currentDate = new Date();
+    const dayofweek = document.getElementById('currentday');
+    const timenow = document.getElementById('currenttime');
 
-const dayOfWeek = currentDate.getDay();
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"];
-const currentDay = daysOfWeek[dayOfWeek];
-
-// Targeting the vacant space for the current day of the week
-
-const theDay = document.getElementById("currentDay");
-theDay.innerHTML = currentDay;
-
-// Getting the current UTC time 
-
-const currentUTC = new Date();
-const hours = currentUTC.getUTCHours();
-const minutes = currentUTC.getUTCMinutes();
-const seconds = currentUTC.getUTCSeconds();
-
-// Targeting the vacant space for the current UTC time
-
-const theCurrentUTC = document.getElementById("currentUTC");
-theCurrentUTC.innerHTML = `${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    if (dayofweek && timenow) {
+        dayofweek.textContent = day;
+        timenow.textContent = time.toString();
+    }    
+}
+document.addEventListener('DOMContentLoaded', function (){
+    UpdateTime();
+    setInterval(UpdateTime, 1);
+});
